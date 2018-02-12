@@ -16,6 +16,9 @@ class Story
     category.add_story(self)
   end
 
-
-
+  def build_author(authorName)
+    a = Author.new
+    a.name=(authorName)
+    self.author=(a)
+  end
 end

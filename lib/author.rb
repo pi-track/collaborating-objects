@@ -9,6 +9,12 @@ class Author
     @stories.dup.freeze
   end
 
+  def build_story(story_name)
+    s = Story.new
+    s.name = story_name
+    @stories << s
+  end
+
   def add_story(story)
     raise AssociationTypeMismatchError, "got #{story.class}, expected Story" if !story.is_a?(Story)
     @stories << story
